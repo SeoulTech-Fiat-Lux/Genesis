@@ -1,0 +1,39 @@
+name: Genesis CI Pipeline
+
+# Event
+on:
+    push:
+        branches: [ "main" ] # This CI will be working when someone directly push their commits on main branch
+    pull_request:
+        branches: [ "main" ] # Or someone occur Pull Request to Main Branch; This is significant part.
+
+# Workflow
+jobs:
+    build:
+        #name of task displayed on Github (e.g. Build on windows-lastest)
+        name: Build on ${{ matrix.os }}
+
+        # Select an OS of virtual computer where this job is executed.
+        runs-on: ${{ matrix.os }}
+
+        # Strategy Setting: This is Matrix strategy: running test on several environments simultaneously.
+        strategy:
+            # even if one test is failed, it compels to keep others until it'd be finished.
+            fail-fast: false
+            matrix:
+                os: [window-latest, unbuntu-latest, macos-latest]
+                build_type: [Release] # Fix CMake build type as "Release."
+
+        # Below steps will be executed procedurally on virtual computer.
+        steps:
+        # Step 1: Our codes on GitHub repository will be checked out on virtual computer.
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+
+        # Step 2: Compose build environment by using CMake. (e.g. creating build folder)
+        - name: Configure CMake
+          run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{matrix.build_type}}
+
+        # Step 3: Base on that environment, this compiles our c++ source codes.
+        - name: Build
+          run: cmake --build ${{github.workspace}}/build --config ${{matrix.build_type}}
