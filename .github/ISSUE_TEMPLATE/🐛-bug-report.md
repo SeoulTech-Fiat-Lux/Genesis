@@ -1,5 +1,5 @@
 ---
-name: "\U0001F41B But Report"
+name: "\U0001F41B Bug Report"
 about: A report for detecting and fixing problems
 title: "[BUG]"
 labels: 'type: bug'
