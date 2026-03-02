@@ -53,12 +53,12 @@ assignees: ''
 
 ### 🇬🇧 TL;DR for English Readers
 
-**🔍 Issue Summary:**
-(버그나 기술 적용 관련 논의를 1~2줄로 요약)
+**:mag: Issue Summary:**
+(발생한 버그의 핵심 현상과 문제점을 1~2줄로 요약)
 
-**🛠️ Resolution / Decision:**
-(최종 합의된 해결책을 영어로 명시)
+**:hammer_and_wrench: Resolution / Decision:**
+(파악된 버그의 근본 원인과 이를 해결하기 위해 수정한 코드)
 
-**📝 Note:**
-(이 선택이 엔진의 아키텍처나 성능에 미치는 영향)
+**:memo: Note:**
+(엔진의 메모리 안정성이나 프레임 방어 등 추후 성능에 미치는 영향)
  -->

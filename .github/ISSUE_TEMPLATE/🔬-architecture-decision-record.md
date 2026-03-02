@@ -1,5 +1,5 @@
 ---
-name: "\U0001F52C Architecture Decision (ADR)"
+name: "\U0001F52C Architecture Decision Record"
 about: A record for significant design of project and technical decision
 title: "[ADR] "
 labels: 'research / ADR, status: discussion'
@@ -47,12 +47,12 @@ assignees: ''
 
 ### 🇬🇧 TL;DR for English Readers
 
-**:mag: Issue Summary:**
-(버그나 기술 적용 관련 논의를 1~2줄로 요약)
+**:thinking: Design Challenge:**
+(직면했던 구조적/기술적 고민의 핵심을 1~2줄로 요약)
 
-**:hammer_and_wrench: Resolution / Decision:**
-(최종 합의된 해결책을 영어로 명시)
+**:rocket: Selected Strategy:**
+(최종적으로 채택한 기술, 알고리즘, 또는 아키텍처)
 
-**:memo: Note:**
-(이 선택이 엔진의 아키텍처나 성능에 미치는 영향)
+**:balance_scale: Reasoning:**
+(해당 전략 선택의 근거와 한계를 영어로 서술)
  -->

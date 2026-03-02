@@ -52,12 +52,12 @@ assignees: ''
 
 ### 🇬🇧 TL;DR for English Readers
 
-**🔍 Issue Summary:**
-(버그나 기술 적용 관련 논의를 1~2줄로 요약)
+**:sparkles: Proposed Feature:**
+(구현이 완료된 엔진의 핵심 기능과 그 목적을 1~2줄로 요약)
 
-**🛠️ Resolution / Decision:**
-(최종 합의된 해결책을 영어로 명시)
+**:hammer_and_wrench: Implementation Details:**
+(기능을 탑재하기 위해 적용한 핵심 알고리즘이나 클래스 구조)
 
-**📝 Note:**
-(이 선택이 엔진의 아키텍처나 성능에 미치는 영향)
+**:microscope: Academic/Technical Significance:**
+(학술 내지 기술 측면에서 드러나는 구현 과정의 의의)
  -->
