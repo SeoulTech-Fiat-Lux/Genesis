@@ -19,8 +19,21 @@ target_include_directories(${PROJECT_NAME} PRIVATE
 )
 
 # 4. 라이브러리 연결
-target_link_libraries(${PROJECT_NAME} PRIVATE 
-    glfw 
-    glm::glm
-    opengl32
-)
+if (APPLE)
+    # mac 환경
+    target_link_libraries(${PROJECT_NAME} PRIVATE
+            glfw
+            glm::glm
+            "-framework OpenGL"
+            "-framework Cocoa"
+            "-framework IOKit"
+            "-framework CoreVideo"
+    )
+elseif(WIN32)
+    # 윈도우 설정
+    target_link_libraries(${PROJECT_NAME} PRIVATE
+            glfw
+            glm::glm
+            opengl32
+    )
+endif()
