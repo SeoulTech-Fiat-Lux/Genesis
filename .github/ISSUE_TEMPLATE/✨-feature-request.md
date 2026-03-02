@@ -1,8 +1,8 @@
 ---
-name: "\U0001F41B Bug Report"
-about: A report for detecting and fixing problems
-title: "[BUG] "
-labels: 'type: bug'
+name: "✨ Feature Request"
+about: A suggestion for new features or implementation of physical logics
+title: "[FEAT] "
+labels: 'type: feature'
 assignees: ''
 
 ---
@@ -35,18 +35,17 @@ assignees: ''
 - status: help: 내 능력 밖이거나, 혼자 해결하기 어려워 팀원의 도움이 시급한 경우
 -->
 
-## :mag: 현상 설명 (Description)
-- **현상 요약:** (예: 메타볼 렌더링 시 프레임이 10 이하로 떨어짐)
-- **발생 경위:** (예: 유체 입자를 1000개 이상 생성하고 화면을 축소할 때)
-- **기대/실제 결과:** (원래는 60FPS 방어가 되어야 하나, 현재 멈춤 현상 발생)
+## :bulb: 제안 내용 (Proposal)
+추가되었으면 하는 기능이나 구현하고자 하는 로직을 설명합니다.
 
-## :dart: 수정 전략(Solution Strategy)
-- [ ] To-do list
+## 🛠️ 상세 구현 아이디어 (Proposed Implementation)
+- **Algorithm/Logic:** 
+- **Affected Classes:** 
 
-## :computer: 환경 정보 (Environment)
-- **OS:** Windows 11 / Linux (Ubuntu 22.04)
-- **Compiler:** MSVC / GCC / Clang
-- **Graphics:** OpenGL Version
+## ✅ 체크리스트 (Tasks)
+- [ ] Logic Implementation
+- [ ] Unit Test Case 작성
+- [ ] Documentation 업데이트
 
 <!-- 
 이하는 이슈 종료(개발 건 PR, 토론 완료 등) 시 제(임요한)가 정리하여 마지막 댓글로 달 예정입니다.
