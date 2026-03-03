@@ -30,7 +30,6 @@ jobs:
         - name: Checkout Repository
           uses: actions/checkout@v4
         
-        steps:
         # Step 2: Check whether ubuntu machine has essential dependencies
         - name: Install Ubuntu Dependencies
           if: runner.os == 'ubuntu-latest'
