@@ -32,17 +32,20 @@ jobs:
         
         # Step 2: Check whether ubuntu machine has essential dependencies
         - name: Install Ubuntu Dependencies
-          if: runner.os == 'ubuntu-latest'
+          if: runner.os == 'Linux'
           run: |
-            sudo apt update
-            sudo apt install -y \
-              libx11-dev \
-              libxrandr-dev \
-              libxinerama-dev \
-              libxcursor-dev \
-              libxi-dev \
-              libgl1-mesa-dev \
-              pkg-config
+            sudo apt-get update -y
+            sudo apt-get install -y \
+            build-essential \
+            cmake \
+            libx11-dev \
+            libxrandr-dev \
+            libxinerama-dev \
+            libxcursor-dev \
+            libxi-dev \
+            libgl1-mesa-dev \
+            libglu1-mesa-dev \
+            pkg-config
 
         # Step 3: Compose build environment by using CMake. (e.g. creating build folder)
         - name: Configure CMake
