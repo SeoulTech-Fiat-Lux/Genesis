@@ -21,7 +21,7 @@ jobs:
             # even if one test is failed, it compels to keep others until it'd be finished.
             fail-fast: false
             matrix:
-                os: [window-latest, unbuntu-latest, macos-latest]
+                os: [windows-latest, unbuntu-latest, macos-latest]
                 build_type: [Release] # Fix CMake build type as "Release."
 
         # Below steps will be executed procedurally on virtual computer.
