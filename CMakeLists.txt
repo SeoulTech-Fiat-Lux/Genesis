@@ -31,11 +31,17 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(glfw glm)
 
-if (APPLE)
+if(APPLE)
 
 elseif(WIN32)
     add_definitions(-D_CRT_SECURE_NO_WARNINGS)
-else()
+else(UNIX AND NOT APPLE)
+    add_definitions(-DPLATFORM_LINUX)
+
+    # 리눅스 환경에서 GLFW가 필요로 하는 시스템 패키지 체크
+    find_package(Threads REQUIRED)
+    find_package(PkgConfig REQUIRED)
 endif()
 
+add_subdirectory(external)
 add_subdirectory(src)

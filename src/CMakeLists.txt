@@ -1,27 +1,21 @@
-file(GLOB_RECURSE ENGINE_SOURCES
-    "core/*.cpp"
-    "graphics/*.cpp"
-    "physics/*.cpp"
-    "*.cpp"
+file(GLOB_RECURSE ENGINE_SOURCES CONFIGURE_DEPENDS
+        "core/*.cpp"
+        "graphics/*.cpp"
+        "physics/*.cpp"
+        "*.cpp"
 )
 
-set(SOURCES 
-    ${ENGINE_SOURCES}
-    "${CMAKE_SOURCE_DIR}/external/glad/src/glad.c"
-)
+add_library(${PROJECT_NAME} STATIC ${ENGINE_SOURCES})
 
-
-add_executable(${PROJECT_NAME} ${SOURCES})
-
-target_include_directories(${PROJECT_NAME} PRIVATE 
+target_include_directories(${PROJECT_NAME} PUBLIC
     "${CMAKE_SOURCE_DIR}/include"
-    "${CMAKE_SOURCE_DIR}/external/glad/include"
 )
 
 # 4. 라이브러리 연결
 if (APPLE)
     # mac 환경
-    target_link_libraries(${PROJECT_NAME} PRIVATE
+    target_link_libraries(${PROJECT_NAME} PUBLIC
+            glad
             glfw
             glm::glm
             "-framework OpenGL"
@@ -31,9 +25,24 @@ if (APPLE)
     )
 elseif(WIN32)
     # 윈도우 설정
-    target_link_libraries(${PROJECT_NAME} PRIVATE
+    target_link_libraries(${PROJECT_NAME} PUBLIC
+            glad
             glfw
             glm::glm
             opengl32
+    )
+elseif(UNIX AND NOT APPLE)
+    # 리눅스(우분투 등) 설정
+    target_link_libraries(${PROJECT_NAME} PUBLIC
+            glad
+            glfw
+            glm::glm
+            GL
+            X11
+            lpthread
+            Xrandr
+            Xi
+            dl
+            m
     )
 endif()
