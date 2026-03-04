@@ -39,7 +39,7 @@ elseif(UNIX AND NOT APPLE)
             glm::glm
             GL
             X11
-            lpthread
+            pthread
             Xrandr
             Xi
             dl
